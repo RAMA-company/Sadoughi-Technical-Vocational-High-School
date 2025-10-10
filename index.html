@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هنرستان فنی و حرفه‌ای شهید صدوقی | پیشرو در آموزش فنی</title>
+    
+    <!-- Primary SEO Meta Tags -->
+    <meta name="description" content="هنرستان فنی و حرفه‌ای شهید صدوقی، مرجع تخصصی آموزش و پرورش متخصصان آینده در رشته‌های معماری، شبکه و نرم‌افزار، الکترونیک، الکتروتکنیک و مکانیک.">
+    <meta name="keywords" content="هنرستان شهید صدوقی, آموزش فنی حرفه ای, معماری, کامپیوتر, شبکه, الکترونیک, الکتروتکنیک, مکانیک, هنرستان تهران">
+    <meta name="author" content="هنرستان شهید صدوقی">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/">
+    <meta property="og:title" content="هنرستان فنی و حرفه‌ای شهید صدوقی | پیشرو در آموزش فنی">
+    <meta property="og:description" content="مرجع تخصصی آموزش و پرورش متخصصان آینده در رشته‌های برتر فنی.">
+    <meta property="og:image" content="https://placehold.co/1200x630/007aff/ffffff?text=هنرستان+شهید+صدوقی">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://your-domain.com/">
+    <meta property="twitter:title" content="هنرستان فنی و حرفه‌ای شهید صدوقی | پیشرو در آموزش فنی">
+    <meta property="twitter:description" content="مرجع تخصصی آموزش و پرورش متخصصان آینده در رشته‌های برتر فنی.">
+    <meta property="twitter:image" content="https://placehold.co/1200x630/007aff/ffffff?text=هنرستان+شهید+صدوقی">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Vazirmatn for Persian) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "هنرستان شهید صدوقی",
+      "description": "هنرستان فنی و حرفه‌ای در رشته‌های معماری، شبکه و نرم‌افزار، الکترونیک، الکتروتکنیک و مکانیک",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "میدان سپاه، خیابان علامه جعفری، تقاطع گلزار شهدا",
+        "addressLocality": "کرج",
+        "addressRegion": "البرز",
+        "postalCode": "3134512345"
+      },
+      "telephone": "+982632700488",
+      "url": "https://your-domain.com"
+    }
+    </script>
+
+    <style>
+        /* Custom Styles - macOS Inspired Liquid Glass Theme */
+        :root {
+            --accent-color: #007aff; /* Apple's blue */
+            --primary-text-color: #1d1d1f; /* Apple's primary text color */
+            --secondary-text-color: #6e6e73; /* Apple's secondary text color */
+            --background-color: #f5f5f7;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: var(--background-color);
+            color: var(--primary-text-color);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        /* Liquid Glass Effect */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: background 0.3s ease, border 0.3s ease;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #e5e5e5; }
+        ::-webkit-scrollbar-thumb { background: var(--accent-color); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0056b3; }
+        
+        /* Professional Fade-in animation on scroll */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.85); display: flex;
+            justify-content: center; align-items: center; z-index: 1000;
+            opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .lightbox.show { opacity: 1; visibility: visible; }
+        .lightbox img { max-width: 90vw; max-height: 80vh; border-radius: 10px; }
+        .lightbox .close-btn {
+            position: absolute; top: 20px; right: 30px;
+            font-size: 3rem; color: white; cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="glass-effect sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2 space-x-reverse">
+                <svg class="h-8 w-8 text-[var(--accent-color)]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.627 48.627 0 0 1 12 20.904a48.627 48.627 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.57 50.57 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.902 59.902 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+                </svg>
+                <span class="text-xl font-bold text-[var(--primary-text-color)]">هنرستان شهید صدوقی</span>
+            </a>
+            <div class="hidden md:flex space-x-8 space-x-reverse items-center">
+                <a href="#home" class="text-[var(--primary-text-color)] hover:text-[var(--accent-color)] transition font-medium">صفحه اصلی</a>
+                <a href="#about" class="text-[var(--primary-text-color)] hover:text-[var(--accent-color)] transition font-medium">درباره ما</a>
+                <a href="#majors" class="text-[var(--primary-text-color)] hover:text-[var(--accent-color)] transition font-medium">رشته‌ها</a>
+                <a href="#news" class="text-[var(--primary-text-color)] hover:text-[var(--accent-color)] transition font-medium">اخبار</a>
+                <a href="#gallery" class="text-[var(--primary-text-color)] hover:text-[var(--accent-color)] transition font-medium">گالری</a>
+                <a href="#downloads" class="text-[var(--primary-text-color)] hover:text-[var(--accent-color)] transition font-medium">دانلودها</a>
+                <a href="#contact" class="bg-[var(--accent-color)] text-white px-5 py-2 rounded-lg hover:opacity-90 transition shadow-md font-semibold">تماس با ما</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4">
+            <a href="#home" class="block py-2 text-gray-700 hover:text-[var(--accent-color)]">صفحه اصلی</a>
+            <a href="#about" class="block py-2 text-gray-700 hover:text-[var(--accent-color)]">درباره ما</a>
+            <a href="#majors" class="block py-2 text-gray-700 hover:text-[var(--accent-color)]">رشته‌ها</a>
+            <a href="#news" class="block py-2 text-gray-700 hover:text-[var(--accent-color)]">اخبار</a>
+            <a href="#gallery" class="block py-2 text-gray-700 hover:text-[var(--accent-color)]">گالری</a>
+            <a href="#downloads" class="block py-2 text-gray-700 hover:text-[var(--accent-color)]">دانلودها</a>
+            <a href="#contact" class="block mt-2 bg-[var(--accent-color)] text-white text-center px-4 py-2 rounded-lg hover:bg-blue-600 transition shadow">تماس با ما</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="min-h-[85vh] flex items-center bg-cover bg-center">
+            <div class="container mx-auto px-6 text-center">
+                <div class="glass-effect p-8 md:p-16 rounded-3xl shadow-xl inline-block animate-on-scroll">
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-[var(--primary-text-color)] mb-4">آینده شغلی خود را اینجا بسازید</h1>
+                    <p class="text-lg md:text-xl text-[var(--secondary-text-color)] mb-8 max-w-2xl mx-auto">هنرستان شهید صدوقی، پرورش دهنده متخصصان ماهر و کارآفرینان فردا</p>
+                    <a href="#majors" class="bg-[var(--accent-color)] text-white px-8 py-3 rounded-xl font-semibold text-lg hover:opacity-90 transition shadow-lg transform hover:scale-105">آشنایی با رشته‌ها</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-24">
+            <div class="container mx-auto px-6 animate-on-scroll">
+                <h2 class="text-4xl font-bold text-center mb-3 text-[var(--primary-text-color)]">درباره هنرستان</h2>
+                <div class="w-24 h-1.5 bg-[var(--accent-color)] mx-auto mb-12 rounded-full"></div>
+                <div class="glass-effect p-8 md:p-12 rounded-3xl shadow-lg max-w-4xl mx-auto">
+                    <p class="text-[var(--secondary-text-color)] leading-loose text-justify text-lg">
+                        هنرستان شهید صدوقی از سال [تاریخ تاسیس] با هدف تربیت نیروی انسانی ماهر و کارآفرین در حوزه‌های فنی و مهندسی فعالیت خود را آغاز کرده است. ماموریت ما ارائه آموزش‌های با کیفیت، مطابق با نیازهای بازار کار و مبتنی بر فناوری‌های نوین است. ما به دنبال آن هستیم که دانش‌آموزان را برای ورود به دانشگاه‌های برتر و یا کسب موقعیت‌های شغلی ممتاز آماده سازیم. چشم‌انداز ما تبدیل شدن به برترین مرکز آموزش‌های فنی و حرفه‌ای در سطح کشور است.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Majors Section -->
+        <section id="majors" class="py-24 bg-white/50">
+            <div class="container mx-auto px-6">
+                <div class="animate-on-scroll">
+                    <h2 class="text-4xl font-bold text-center mb-3 text-[var(--primary-text-color)]">رشته‌های تحصیلی</h2>
+                    <div class="w-24 h-1.5 bg-[var(--accent-color)] mx-auto mb-16 rounded-full"></div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8" data-stagger-children>
+                    <!-- Major Card -->
+                    <div class="bg-white p-6 rounded-3xl text-center shadow-lg transform hover:-translate-y-2 transition-transform duration-300 animate-on-scroll border border-gray-100">
+                        <i class="fas fa-drafting-compass text-5xl text-[var(--accent-color)] mb-5"></i>
+                        <h3 class="text-xl font-bold mb-2 text-[var(--primary-text-color)]">معماری</h3>
+                        <p class="text-sm text-[var(--secondary-text-color)]">طراحی فضاهای خلاق و کاربردی با اصول مهندسی.</p>
+                    </div>
+                    <!-- Major Card -->
+                    <div class="bg-white p-6 rounded-3xl text-center shadow-lg transform hover:-translate-y-2 transition-transform duration-300 animate-on-scroll border border-gray-100">
+                        <i class="fas fa-network-wired text-5xl text-[var(--accent-color)] mb-5"></i>
+                        <h3 class="text-xl font-bold mb-2 text-[var(--primary-text-color)]">شبکه و نرم‌افزار</h3>
+                        <p class="text-sm text-[var(--secondary-text-color)]">توسعه نرم‌افزار و مدیریت زیرساخت‌های شبکه.</p>
+                    </div>
+                    <!-- Major Card -->
+                    <div class="bg-white p-6 rounded-3xl text-center shadow-lg transform hover:-translate-y-2 transition-transform duration-300 animate-on-scroll border border-gray-100">
+                        <i class="fas fa-microchip text-5xl text-[var(--accent-color)] mb-5"></i>
+                        <h3 class="text-xl font-bold mb-2 text-[var(--primary-text-color)]">الکترونیک</h3>
+                        <p class="text-sm text-[var(--secondary-text-color)]">طراحی و ساخت مدارهای الکترونیکی و سیستم‌های هوشمند.</p>
+                    </div>
+                    <!-- Major Card -->
+                    <div class="bg-white p-6 rounded-3xl text-center shadow-lg transform hover:-translate-y-2 transition-transform duration-300 animate-on-scroll border border-gray-100">
+                        <i class="fas fa-bolt text-5xl text-[var(--accent-color)] mb-5"></i>
+                        <h3 class="text-xl font-bold mb-2 text-[var(--primary-text-color)]">الکتروتکنیک</h3>
+                        <p class="text-sm text-[var(--secondary-text-color)]">مبانی برق صنعتی، ماشین‌های الکتریکی و تاسیسات.</p>
+                    </div>
+                    <!-- Major Card -->
+                    <div class="bg-white p-6 rounded-3xl text-center shadow-lg transform hover:-translate-y-2 transition-transform duration-300 animate-on-scroll border border-gray-100">
+                        <i class="fas fa-cogs text-5xl text-[var(--accent-color)] mb-5"></i>
+                        <h3 class="text-xl font-bold mb-2 text-[var(--primary-text-color)]">مکانیک</h3>
+                        <p class="text-sm text-[var(--secondary-text-color)]">طراحی، ساخت و نگهداری ماشین‌آلات صنعتی.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="py-24">
+            <div class="container mx-auto px-6">
+                 <div class="animate-on-scroll">
+                    <h2 class="text-4xl font-bold text-center mb-3 text-[var(--primary-text-color)]">اخبار و رویدادها</h2>
+                    <div class="w-24 h-1.5 bg-[var(--accent-color)] mx-auto mb-16 rounded-full"></div>
+                </div>
+                <div id="news-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-stagger-children>
+                    <!-- News items will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-24 bg-white/50">
+            <div class="container mx-auto px-6">
+                <div class="animate-on-scroll">
+                    <h2 class="text-4xl font-bold text-center mb-3 text-[var(--primary-text-color)]">گالری تصاویر</h2>
+                    <div class="w-24 h-1.5 bg-[var(--accent-color)] mx-auto mb-16 rounded-full"></div>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" data-stagger-children>
+                    <img src="https://placehold.co/600x400/007aff/ffffff?text=کارگاه+معماری" alt="کارگاه معماری هنرستان" class="rounded-2xl shadow-md cursor-pointer transition transform hover:scale-105 gallery-item animate-on-scroll">
+                    <img src="https://placehold.co/600x400/34c759/ffffff?text=آزمایشگاه+شبکه" alt="آزمایشگاه شبکه هنرستان" class="rounded-2xl shadow-md cursor-pointer transition transform hover:scale-105 gallery-item animate-on-scroll">
+                    <img src="https://placehold.co/600x400/ff9500/ffffff?text=کارگاه+الکترونیک" alt="کارگاه الکترونیک هنرستان" class="rounded-2xl shadow-md cursor-pointer transition transform hover:scale-105 gallery-item animate-on-scroll">
+                    <img src="https://placehold.co/600x400/ff3b30/ffffff?text=مسابقات+رباتیک" alt="مسابقات رباتیک" class="rounded-2xl shadow-md cursor-pointer transition transform hover:scale-105 gallery-item animate-on-scroll">
+                    <img src="https://placehold.co/600x400/5856d6/ffffff?text=فضای+هنرستان" alt="فضای داخلی هنرستان" class="rounded-2xl shadow-md cursor-pointer transition transform hover:scale-105 gallery-item animate-on-scroll">
+                    <img src="https://placehold.co/600x400/af52de/ffffff?text=جشن+فارغ‌التحصیلی" alt="جشن فارغ التحصیلی" class="rounded-2xl shadow-md cursor-pointer transition transform hover:scale-105 gallery-item animate-on-scroll">
+                    <img src="https://placehold.co/600x400/007aff/ffffff?text=کلاس+درس" alt="کلاس درس مجهز" class="rounded-2xl shadow-md cursor-pointer transition transform hover:scale-105 gallery-item animate-on-scroll">
+                    <img src="https://placehold.co/600x400/34c759/ffffff?text=کارگاه+مکانیک" alt="کارگاه مکانیک هنرستان" class="rounded-2xl shadow-md cursor-pointer transition transform hover:scale-105 gallery-item animate-on-scroll">
+                </div>
+            </div>
+        </section>
+
+        <!-- Downloads Section -->
+        <section id="downloads" class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="animate-on-scroll">
+                    <h2 class="text-4xl font-bold text-center mb-3 text-[var(--primary-text-color)]">بخش دانلودها</h2>
+                    <div class="w-24 h-1.5 bg-[var(--accent-color)] mx-auto mb-16 rounded-full"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-stagger-children>
+                    <!-- Category -->
+                    <div class="glass-effect p-8 rounded-3xl shadow-lg animate-on-scroll">
+                        <h3 class="text-2xl font-bold mb-4 text-[var(--primary-text-color)] border-b-2 border-[var(--accent-color)] pb-3">کتاب‌های درسی</h3>
+                        <ul class="space-y-4 pt-3">
+                            <li><a href="#" class="flex items-center text-[var(--secondary-text-color)] hover:text-[var(--accent-color)] transition"><i class="fas fa-book ml-3 text-[var(--accent-color)] text-lg"></i> کتاب ریاضی پایه دهم</a></li>
+                            <li><a href="#" class="flex items-center text-[var(--secondary-text-color)] hover:text-[var(--accent-color)] transition"><i class="fas fa-book ml-3 text-[var(--accent-color)] text-lg"></i> مبانی شبکه (PDF)</a></li>
+                        </ul>
+                    </div>
+                    <!-- Category -->
+                    <div class="glass-effect p-8 rounded-3xl shadow-lg animate-on-scroll">
+                        <h3 class="text-2xl font-bold mb-4 text-[var(--primary-text-color)] border-b-2 border-[var(--accent-color)] pb-3">فرم‌های ثبت‌نام</h3>
+                        <ul class="space-y-4 pt-3">
+                            <li><a href="#" class="flex items-center text-[var(--secondary-text-color)] hover:text-[var(--accent-color)] transition"><i class="fas fa-file-alt ml-3 text-[var(--accent-color)] text-lg"></i> فرم ثبت‌نام سال تحصیلی جدید</a></li>
+                            <li><a href="#" class="flex items-center text-[var(--secondary-text-color)] hover:text-[var(--accent-color)] transition"><i class="fas fa-file-alt ml-3 text-[var(--accent-color)] text-lg"></i> فرم رضایت‌نامه اردو</a></li>
+                        </ul>
+                    </div>
+                    <!-- Category -->
+                    <div class="glass-effect p-8 rounded-3xl shadow-lg animate-on-scroll">
+                        <h3 class="text-2xl font-bold mb-4 text-[var(--primary-text-color)] border-b-2 border-[var(--accent-color)] pb-3">نمونه سوالات</h3>
+                        <ul class="space-y-4 pt-3">
+                            <li><a href="#" class="flex items-center text-[var(--secondary-text-color)] hover:text-[var(--accent-color)] transition"><i class="fas fa-file-archive ml-3 text-[var(--accent-color)] text-lg"></i> سوالات نهایی الکترونیک</a></li>
+                            <li><a href="#" class="flex items-center text-[var(--secondary-text-color)] hover:text-[var(--accent-color)] transition"><i class="fas fa-file-archive ml-3 text-[var(--accent-color)] text-lg"></i> کنکور فنی سال گذشته</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-white/50">
+            <div class="container mx-auto px-6 animate-on-scroll">
+                <h2 class="text-4xl font-bold text-center mb-3 text-[var(--primary-text-color)]">تماس با ما</h2>
+                <div class="w-24 h-1.5 bg-[var(--accent-color)] mx-auto mb-16 rounded-full"></div>
+                <div class="glass-effect rounded-3xl shadow-xl lg:flex lg:flex-row-reverse">
+                    <div class="lg:w-1/2 p-8 md:p-12">
+                        <h3 class="text-3xl font-bold mb-6 text-[var(--primary-text-color)]">ارسال پیام</h3>
+                        <form action="#" method="POST">
+                            <div class="mb-5">
+                                <label for="name" class="block mb-2 text-sm font-medium text-gray-700">نام شما</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-white/80 border border-gray-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] transition">
+                            </div>
+                            <div class="mb-5">
+                                <label for="email" class="block mb-2 text-sm font-medium text-gray-700">ایمیل</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-white/80 border border-gray-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] transition">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block mb-2 text-sm font-medium text-gray-700">پیام شما</label>
+                                <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 bg-white/80 border border-gray-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] transition"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full bg-[var(--accent-color)] text-white px-4 py-3 rounded-lg hover:opacity-90 transition shadow-md font-semibold text-lg">ارسال پیام</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="lg:w-1/2 p-8 md:p-12">
+                         <h3 class="text-3xl font-bold mb-6 text-[var(--primary-text-color)]">اطلاعات تماس</h3>
+                        <div class="space-y-5 text-[var(--secondary-text-color)] text-base">
+                            <p class="flex items-start"><i class="fas fa-map-marker-alt ml-4 mt-1 text-[var(--accent-color)] text-xl"></i><span><strong>آدرس:</strong> کرج – میدان سپاه، خیابان علامه جعفری، تقاطع گلزار شهدا</span></p>
+                            <p class="flex items-start"><i class="fas fa-phone ml-4 mt-1 text-[var(--accent-color)] text-xl"></i><span><strong>تلفن:</strong> 026-32700230 | 026-32700488</span></p>
+                            <p class="flex items-start"><i class="fas fa-envelope ml-4 mt-1 text-[var(--accent-color)] text-xl"></i><span><strong>ایمیل:</strong> info@sadoughi-school.ir</span></p>
+                        </div>
+                        <div class="mt-8">
+                            <div class="bg-gray-200 h-80 rounded-2xl flex items-center justify-center text-gray-500 overflow-hidden">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1177.3584243948844!2d50.978589354089976!3d35.81780918829413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8dbfb0e406d54d%3A0x8027aaf6d1a6e04a!2sSadoughi%20Technical-Vocational%20High%20School!5e0!3m2!1sen!2snl!4v1760102821349!5m2!1sen!2snl" class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white pt-10 pb-6">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>تمامی حقوق برای هنرستان فنی و حرفه‌ای شهید صدوقی محفوظ است. &copy; 1403</p>
+        </div>
+    </footer>
+    
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn" id="lightbox-close-btn">&times;</span>
+        <img src="" alt="تصویر بزرگ شده" id="lightbox-img">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            });
+
+            // Dynamic News Loading
+            const newsData = [
+                { title: "برگزاری مسابقات علمی", date: "1403/02/25", content: "مسابقات سالانه علمی هنرستان با مشارکت گسترده دانش‌آموزان در رشته‌های مختلف برگزار شد و نفرات برتر معرفی شدند.", image: "https://placehold.co/600x400/007aff/ffffff?text=مسابقات+علمی" },
+                { title: "بازدید از کارخانه صنعتی", date: "1403/02/18", content: "دانش‌آموزان رشته مکانیک از خط تولید یک کارخانه صنعتی بازدید کردند تا با فرآیندهای واقعی تولید آشنا شوند.", image: "https://placehold.co/600x400/34c759/ffffff?text=بازدید+صنعتی" },
+                { title: "کارگاه آموزش برنامه‌نویسی", date: "1403/02/10", content: "یک کارگاه تخصصی برنامه‌نویسی پایتون برای دانش‌آموزان رشته شبکه و نرم‌افزار برگزار گردید.", image: "https://placehold.co/600x400/ff9500/ffffff?text=کارگاه+آموزشی" }
+            ];
+
+            const newsContainer = document.getElementById('news-container');
+            newsData.forEach(newsItem => {
+                const newsCard = `
+                    <div class="glass-effect overflow-hidden rounded-3xl shadow-lg animate-on-scroll">
+                        <img src="${newsItem.image}" alt="${newsItem.title}" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-[var(--primary-text-color)]">${newsItem.title}</h3>
+                            <p class="text-sm text-gray-500 mb-4">${newsItem.date}</p>
+                            <p class="text-[var(--secondary-text-color)]">${newsItem.content}</p>
+                        </div>
+                    </div>
+                `;
+                newsContainer.innerHTML += newsCard;
+            });
+            
+            // Intersection Observer for professional animations with stagger effect
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            // Stagger animations for card groups
+            document.querySelectorAll('[data-stagger-children]').forEach(container => {
+                const children = container.querySelectorAll('.animate-on-scroll');
+                children.forEach((child, index) => {
+                    child.style.transitionDelay = `${index * 120}ms`;
+                });
+            });
+            
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Lightbox Gallery Logic
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCloseBtn = document.getElementById('lightbox-close-btn');
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    lightboxImg.src = item.src;
+                    lightbox.classList.add('show');
+                });
+            });
+            
+            function closeLightbox() {
+                 lightbox.classList.remove('show');
+            }
+
+            lightboxCloseBtn.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+        });
+    </script>
+</body>
+</html>
+
+

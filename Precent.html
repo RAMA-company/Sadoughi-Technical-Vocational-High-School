@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مبدل درصد حرفه‌ای</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --blue: #4285F4;
+            --red: #EA4335;
+            --yellow: #FBBC05;
+            --green: #34A853;
+            --bg: #F2F3F4;
+            --black: #000000;
+            --white: #FFFFFF;
+            --radius: 16px;
+            --shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--black);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--blue);
+            background: var(--white);
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: var(--shadow);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: var(--blue);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--black);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 600;
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .tab-btn {
+            background: var(--white);
+            border: none;
+            padding: 12px 24px;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            color: var(--black);
+        }
+
+        .tab-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-btn.active {
+            background: var(--blue);
+            color: var(--white);
+        }
+
+        .tab-content {
+            display: none;
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .calculator {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: var(--black);
+        }
+
+        input, select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e0e0e0;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--blue);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.2);
+        }
+
+        .btn {
+            background: var(--blue);
+            color: var(--white);
+            border: none;
+            padding: 14px 24px;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-green {
+            background: var(--green);
+        }
+
+        .btn-red {
+            background: var(--red);
+        }
+
+        .btn-yellow {
+            background: var(--yellow);
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background: var(--bg);
+            border-radius: var(--radius);
+            border-right: 4px solid var(--blue);
+            animation: fadeIn 0.5s ease;
+        }
+
+        .result h3 {
+            color: var(--blue);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .result-value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--black);
+            margin: 10px 0;
+        }
+
+        .fraction-input {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .fraction-input input {
+            text-align: center;
+        }
+
+        .discount-comparison {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .discount-item {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .discount-item input {
+            flex: 1;
+        }
+
+        .add-discount {
+            background: var(--green);
+            color: var(--white);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            font-weight: 700;
+        }
+
+        .add-discount:hover {
+            transform: scale(1.1);
+        }
+
+        .remove-discount {
+            background: var(--red);
+            color: var(--white);
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            font-weight: 700;
+        }
+
+        .remove-discount:hover {
+            transform: scale(1.1);
+        }
+
+        .comparison-result {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .comparison-item {
+            flex: 1;
+            padding: 15px;
+            border-radius: var(--radius);
+            text-align: center;
+            background: var(--white);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .comparison-item.winner {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            border: 2px solid var(--green);
+        }
+
+        .comparison-item h4 {
+            color: var(--blue);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .comparison-value {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--black);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .pulse {
+            animation: pulse 0.5s ease;
+        }
+
+        @media (max-width: 768px) {
+            .calculator {
+                grid-template-columns: 1fr;
+            }
+            
+            .tabs {
+                flex-direction: column;
+            }
+            
+            .comparison-result {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-percentage"></i>
+                </div>
+                <h1>مبدل درصد حرفه‌ای</h1>
+            </div>
+            <p class="subtitle">ابزاری کامل برای تمام محاسبات درصدی شما</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="fraction">تبدیل کسر به درصد</button>
+            <button class="tab-btn" data-tab="decimal">تبدیل اعداد ممیزدار</button>
+            <button class="tab-btn" data-tab="find-number">پیدا کردن عدد اصلی</button>
+            <button class="tab-btn" data-tab="discount">مقایسه تخفیف‌ها</button>
+            <button class="tab-btn" data-tab="multiple">چند درصدی</button>
+        </div>
+
+        <div class="tab-content active" id="fraction-tab">
+            <h2>تبدیل کسر به درصد</h2>
+            <div class="calculator">
+                <div>
+                    <div class="input-group">
+                        <label for="numerator">صورت کسر</label>
+                        <input type="number" id="numerator" placeholder="عدد صورت را وارد کنید">
+                    </div>
+                    <div class="input-group">
+                        <label for="denominator">مخرج کسر</label>
+                        <input type="number" id="denominator" placeholder="عدد مخرج را وارد کنید">
+                    </div>
+                    <button class="btn" id="convert-fraction">تبدیل به درصد</button>
+                </div>
+                <div class="result" id="fraction-result" style="display: none;">
+                    <h3>نتیجه تبدیل</h3>
+                    <p id="fraction-display"></p>
+                    <p class="result-value" id="fraction-percent"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="decimal-tab">
+            <h2>تبدیل اعداد ممیزدار و درصد</h2>
+            <div class="calculator">
+                <div>
+                    <div class="input-group">
+                        <label for="decimal-input">عدد ممیزدار یا درصد</label>
+                        <input type="text" id="decimal-input" placeholder="عدد را وارد کنید (مثال: 0.75 یا 75%)">
+                    </div>
+                    <div class="input-group">
+                        <label for="conversion-type">نوع تبدیل</label>
+                        <select id="conversion-type">
+                            <option value="to-percent">تبدیل به درصد</option>
+                            <option value="from-percent">تبدیل از درصد</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-green" id="convert-decimal">انجام تبدیل</button>
+                </div>
+                <div class="result" id="decimal-result" style="display: none;">
+                    <h3>نتیجه تبدیل</h3>
+                    <p class="result-value" id="decimal-output"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="find-number-tab">
+            <h2>پیدا کردن عدد اصلی</h2>
+            <div class="calculator">
+                <div>
+                    <div class="input-group">
+                        <label for="partial-percent">چند درصد از عدد</label>
+                        <input type="number" id="partial-percent" placeholder="مثال: 50">
+                    </div>
+                    <div class="input-group">
+                        <label for="partial-value">برابر است با</label>
+                        <input type="number" id="partial-value" placeholder="مثال: 90">
+                    </div>
+                    <button class="btn btn-yellow" id="find-number">پیدا کردن عدد اصلی</button>
+                </div>
+                <div class="result" id="find-number-result" style="display: none;">
+                    <h3>عدد اصلی</h3>
+                    <p class="result-value" id="original-number"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="discount-tab">
+            <h2>مقایسه تخفیف‌ها</h2>
+            <p>درصدهای تخفیف را وارد کنید تا بهترین گزینه را پیدا کنید:</p>
+            
+            <div class="discount-comparison" id="discount-container">
+                <div class="discount-item">
+                    <input type="number" class="discount-input" placeholder="درصد تخفیف (مثال: 20)">
+                    <button class="remove-discount">×</button>
+                </div>
+            </div>
+            
+            <button class="add-discount" id="add-discount">+</button>
+            
+            <div class="input-group">
+                <label for="original-price">قیمت اصلی (اختیاری)</label>
+                <input type="number" id="original-price" placeholder="قیمت اصلی کالا">
+            </div>
+            
+            <button class="btn btn-red" id="compare-discounts">مقایسه تخفیف‌ها</button>
+            
+            <div class="comparison-result" id="comparison-result" style="display: none;"></div>
+        </div>
+
+        <div class="tab-content" id="multiple-tab">
+            <h2>محاسبه چند درصدی</h2>
+            <p>چند درصد پشت سر هم را محاسبه کنید (مانند چند تخفیف متوالی):</p>
+            
+            <div class="calculator">
+                <div>
+                    <div class="input-group">
+                        <label for="base-number">عدد پایه</label>
+                        <input type="number" id="base-number" placeholder="عدد اولیه را وارد کنید">
+                    </div>
+                    
+                    <div id="multiple-percents-container">
+                        <div class="input-group">
+                            <label>درصد اول</label>
+                            <input type="number" class="multiple-percent" placeholder="درصد را وارد کنید">
+                        </div>
+                    </div>
+                    
+                    <button class="add-discount" id="add-multiple-percent">+</button>
+                    
+                    <button class="btn" id="calculate-multiple">محاسبه نتیجه نهایی</button>
+                </div>
+                <div class="result" id="multiple-result" style="display: none;">
+                    <h3>نتیجه نهایی</h3>
+                    <p class="result-value" id="multiple-output"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab switching functionality
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            });
+        });
+
+        // Fraction to percentage conversion
+        document.getElementById('convert-fraction').addEventListener('click', () => {
+            const numerator = parseFloat(document.getElementById('numerator').value);
+            const denominator = parseFloat(document.getElementById('denominator').value);
+            
+            if (isNaN(numerator) || isNaN(denominator) || denominator === 0) {
+                alert('لطفاً اعداد معتبر وارد کنید و مطمئن شوید مخرج صفر نیست.');
+                return;
+            }
+            
+            const percentage = (numerator / denominator) * 100;
+            
+            document.getElementById('fraction-display').textContent = `${numerator}/${denominator} =`;
+            document.getElementById('fraction-percent').textContent = `${percentage.toFixed(2)}%`;
+            document.getElementById('fraction-result').style.display = 'block';
+            
+            // Add animation
+            document.getElementById('fraction-result').classList.add('pulse');
+            setTimeout(() => {
+                document.getElementById('fraction-result').classList.remove('pulse');
+            }, 500);
+        });
+
+        // Decimal/percentage conversion
+        document.getElementById('convert-decimal').addEventListener('click', () => {
+            const input = document.getElementById('decimal-input').value.trim();
+            const conversionType = document.getElementById('conversion-type').value;
+            
+            if (!input) {
+                alert('لطفاً عددی وارد کنید.');
+                return;
+            }
+            
+            let result;
+            
+            if (conversionType === 'to-percent') {
+                // Convert decimal to percentage
+                const decimal = parseFloat(input);
+                if (isNaN(decimal)) {
+                    alert('لطفاً عدد معتبر وارد کنید.');
+                    return;
+                }
+                result = `${(decimal * 100).toFixed(2)}%`;
+            } else {
+                // Convert percentage to decimal
+                if (input.endsWith('%')) {
+                    const percent = parseFloat(input.slice(0, -1));
+                    if (isNaN(percent)) {
+                        alert('لطفاً درصد معتبر وارد کنید.');
+                        return;
+                    }
+                    result = (percent / 100).toFixed(4);
+                } else {
+                    alert('لطفاً برای تبدیل از درصد، عدد را با علامت % وارد کنید.');
+                    return;
+                }
+            }
+            
+            document.getElementById('decimal-output').textContent = result;
+            document.getElementById('decimal-result').style.display = 'block';
+            
+            // Add animation
+            document.getElementById('decimal-result').classList.add('pulse');
+            setTimeout(() => {
+                document.getElementById('decimal-result').classList.remove('pulse');
+            }, 500);
+        });
+
+        // Find original number
+        document.getElementById('find-number').addEventListener('click', () => {
+            const percent = parseFloat(document.getElementById('partial-percent').value);
+            const value = parseFloat(document.getElementById('partial-value').value);
+            
+            if (isNaN(percent) || isNaN(value)) {
+                alert('لطفاً اعداد معتبر وارد کنید.');
+                return;
+            }
+            
+            const originalNumber = (value / percent) * 100;
+            
+            document.getElementById('original-number').textContent = originalNumber.toFixed(2);
+            document.getElementById('find-number-result').style.display = 'block';
+            
+            // Add animation
+            document.getElementById('find-number-result').classList.add('pulse');
+            setTimeout(() => {
+                document.getElementById('find-number-result').classList.remove('pulse');
+            }, 500);
+        });
+
+        // Discount comparison functionality
+        const discountContainer = document.getElementById('discount-container');
+        const addDiscountBtn = document.getElementById('add-discount');
+        
+        // Add discount input field
+        addDiscountBtn.addEventListener('click', () => {
+            const discountItem = document.crea
